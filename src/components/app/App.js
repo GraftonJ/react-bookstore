@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import BookList from '../booklist/BookList.js'
 import SearchBar from '../searchbar/SearchBar.js'
+import Cart from '../Cart/Cart.js'
 
   class App extends React.Component {
 
@@ -28,12 +29,23 @@ import SearchBar from '../searchbar/SearchBar.js'
       }
     }
 
+    addToCart = id => {
+      this.setState({
+        ...this.state,
+        books: this.state.books.map(book => {
+          if(book.id === id) book.inCart = true
+          return book
+        })
+      })
+    }
+
     render() {
       return (
-        <div>
+        <div className="home">
           <h1>Bookstore</h1>
           <SearchBar />
-          <BookList books={this.state.books} />
+          <BookList books={this.state.books} addToCart={this.addToCart}/>
+          <Cart books={this.state.books} />
         </div>
       )
     }
