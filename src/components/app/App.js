@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import BookList from '../booklist/BookList.js'
+import SearchBar from '../searchbar/SearchBar.js'
 
   class App extends React.Component {
 
@@ -31,6 +32,7 @@ import BookList from '../booklist/BookList.js'
       return (
         <div>
           <h1>Bookstore</h1>
+          <SearchBar />
           <BookList books={this.state.books} />
         </div>
       )

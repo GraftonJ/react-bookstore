@@ -11,6 +11,7 @@ export default class BookList extends React.Component {
                 <th scope="col">Id</th>
                 <th scope="col">Title</th>
                 <th scope="col">Author</th>
+                <th scope="col">Add to Cart</th>
               </tr>
             </thead>
             <tbody>
