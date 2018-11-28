@@ -51,8 +51,8 @@ import Cart from '../Cart/Cart.js'
 
     render() {
       return (
-        <div className="home">
-          <h1>Bookstore</h1>
+        <div className="container" id="header">
+          <h1 className="container">Bookstore</h1>
           <SearchBar matchingBook={this.matchingBook}/>
           <BookList books={this.state.books} addToCart={this.addToCart} searchFieldInput={this.state.searchFieldInput}/>
           <Cart books={this.state.books} total={this.state.books.filter(book => book.inCart).reduce((acc, book) => { return acc + parseInt(book.price) }, 0).toFixed(2)}/>

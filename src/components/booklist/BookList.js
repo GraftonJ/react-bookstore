@@ -4,7 +4,7 @@ import Book from './Book.js'
 export default class BookList extends React.Component {
   render() {
     return (
-      <div>
+      <div className="container">
           <table className="table table-striped table-dark">
             <thead>
               <tr>

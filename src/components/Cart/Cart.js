@@ -9,7 +9,7 @@ export default class Cart extends React.Component {
         return <CartItem key={idx} book={book}/>
       })
     return (
-      <div>
+      <div className="container">
           <h2>Cart</h2>
             <h5>Total: ${this.props.total}</h5>
             <table className="table table-striped table-dark">

@@ -23,7 +23,7 @@ export default class SearchBar extends React.Component {
     }
   render() {
     return (
-      <form>
+      <form className="container">
         <label htmlFor='Book'>Search:
           <input type='text' value={this.state.input} onChange={this.findBook}></input>
         </label>
