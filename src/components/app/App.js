@@ -55,7 +55,7 @@ import Cart from '../Cart/Cart.js'
           <h1>Bookstore</h1>
           <SearchBar matchingBook={this.matchingBook}/>
           <BookList books={this.state.books} addToCart={this.addToCart} searchFieldInput={this.state.searchFieldInput}/>
-          <Cart books={this.state.books} />
+          <Cart books={this.state.books} total={this.state.books.filter(book => book.inCart).reduce((acc, book) => { return acc + parseInt(book.price) }, 0).toFixed(2)}/>
         </div>
       )
     }

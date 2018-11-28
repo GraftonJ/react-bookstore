@@ -11,6 +11,7 @@ export default class Cart extends React.Component {
     return (
       <div>
           <h2>Cart</h2>
+            <h5>Total: ${this.props.total}</h5>
             <table className="table table-striped table-dark">
               <thead>
                 <tr>
