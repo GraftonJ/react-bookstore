@@ -11,7 +11,19 @@ export default class Cart extends React.Component {
     return (
       <div>
           <h2>Cart</h2>
-          {books}
+            <table className="table table-striped table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Title</th>
+                  <th scope="col">Author</th>
+                  <th scope="col">Add to Cart</th>
+                </tr>
+              </thead>
+              <tbody>
+                {books}
+              </tbody>
+            </table>
       </div>
     )
   }

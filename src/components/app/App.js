@@ -10,7 +10,8 @@ import Cart from '../Cart/Cart.js'
        super(props)
        this.apibase = 'http://localhost:8082/api/books/'
        this.state = {
-         books: []
+         books: [],
+         searchFieldInput: ''
        }
      }
 
@@ -33,9 +34,18 @@ import Cart from '../Cart/Cart.js'
       this.setState({
         ...this.state,
         books: this.state.books.map(book => {
-          if(book.id === id) book.inCart = true
+          if(book.id === id){
+            book.inCart = true
+          }
           return book
         })
+      })
+    }
+
+    matchingBook = searchFieldInput => {
+    this.setState({
+      ...this.state,
+      searchFieldInput
       })
     }
 
@@ -43,8 +53,8 @@ import Cart from '../Cart/Cart.js'
       return (
         <div className="home">
           <h1>Bookstore</h1>
-          <SearchBar />
-          <BookList books={this.state.books} addToCart={this.addToCart}/>
+          <SearchBar matchingBook={this.matchingBook}/>
+          <BookList books={this.state.books} addToCart={this.addToCart} searchFieldInput={this.state.searchFieldInput}/>
           <Cart books={this.state.books} />
         </div>
       )

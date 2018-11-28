@@ -15,7 +15,9 @@ export default class BookList extends React.Component {
               </tr>
             </thead>
             <tbody>
-            {this.props.books.map((elem, idx) => <Book key={idx} id={elem.id} book={elem} />)}
+            {this.props.books.filter(book => ( book.title.includes(this.props.searchFieldInput) || book.author.includes(this.props.searchFieldInput))).map((book, idx) =>
+              (<Book key={idx} book={book} addToCart={this.props.addToCart}/>
+            ))}
             </tbody>
           </table>
       </div>
